@@ -1,17 +1,14 @@
 public class User {
-    String user;
-    String category;
+    private String Users;
 
-    public User (String user, String category, int Score){
-      this.user = user;
-      this.category = category;
+
+    public User (String Users) {
+        this.Users = Users;
     }
 
 
-public String getUser() {
-    return user;
+public String getUsers(){
+        return Users;
 }
 
-public String getCategory(){
-    return category;
-}}
+}
