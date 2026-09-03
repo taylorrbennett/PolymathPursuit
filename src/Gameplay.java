@@ -8,6 +8,7 @@ public class Gameplay {
     private QuestionSetup[] questions;
     private int currentQuestions;
     private int switchTurnsUser;
+    private boolean gameFinished = false;
 
 public Gameplay (User firstUser,User secondUser, Scoring firstUserScore, Scoring secondUserScore) {
     this.firstUser = firstUser;
@@ -45,6 +46,26 @@ public Gameplay (User firstUser,User secondUser, Scoring firstUserScore, Scoring
         nextQuestion();
     }
     }
+    public User getTheNameOfTheCurrentUser() {
+    if ( switchTurnsUser == 1) {
+        return firstUser;
+    } else {
+        return secondUser;
+    }
+    }
+
+    public User getFirstUser() {
+        return firstUser;
+    }
+    public User getSecondUser() {
+        return secondUser;
+    }
+    public Scoring getFirstUserScoringTurnedIntoObject() {
+        return firstUserScore;
+    }
+    public Scoring getSecondUserScoringTurnedIntoObject() {
+        return secondUserScore;
+    }
 
     public QuestionSetup getCurrentQuestions() {
         return questions[currentQuestions];
@@ -61,11 +82,16 @@ public Gameplay (User firstUser,User secondUser, Scoring firstUserScore, Scoring
             secondUserScore.gainedPoints();
             System.out.println("Score: " + secondUserScore.getScoring());
         }
-
     }  else {
             System.out.println("not correct");
         }
         nextTurn();
+    }
+    public int firstUserScore() {
+    return firstUserScore.getScoring();
+    }
+    public int secondUserScore() {
+    return secondUserScore.getScoring();
     }
 
     public void nextQuestion() {
@@ -76,6 +102,9 @@ public Gameplay (User firstUser,User secondUser, Scoring firstUserScore, Scoring
     }}
 
     public void gameIsFinished() {
-        System.out.println("Game is over");
+        gameFinished = true;
+    }
+    public boolean isGameFinishedForreal() {
+        return gameFinished;
     }
 }

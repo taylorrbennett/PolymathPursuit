@@ -6,3 +6,6 @@ public class Main {
 
     }
 }
+
+
+//timer, randomize questions, bigger database - alex suggestions
