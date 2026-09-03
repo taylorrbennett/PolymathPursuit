@@ -35,17 +35,18 @@ public Gameplay (User firstUser,User secondUser, Scoring firstUserScore, Scoring
     }
 
     public void loadQuestions(){
-    questions = Questions.getQuestions( firstUserCategory, secondUserCategory);
+    questions = QuestionsFromSql.getQuestionsFromSql(firstUserCategory, secondUserCategory);
     }
 
     public void nextTurn() {
     if( switchTurnsUser == 1) {
         switchTurnsUser = 2;
     } else {
-        switchTurnsUser =1;
+        switchTurnsUser = 1;
+    }                               // this changes turns
         nextQuestion();
     }
-    }
+
     public User getTheNameOfTheCurrentUser() {
     if ( switchTurnsUser == 1) {
         return firstUser;
