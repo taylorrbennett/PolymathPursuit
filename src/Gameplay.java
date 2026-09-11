@@ -46,6 +46,10 @@ public Gameplay (User firstUser,User secondUser, Scoring firstUserScore, Scoring
     }                               // this changes turns
         nextQuestion();
     }
+    public void theTimeRanOut() {
+        System.out.println("Sorry, time ran out!");
+        nextTurn();
+    }
 
     public User getTheNameOfTheCurrentUser() {
     if ( switchTurnsUser == 1) {

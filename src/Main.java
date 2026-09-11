@@ -19,8 +19,8 @@ public class Main {
 //timer, randomize questions, bigger database - alex suggestions
 // add large question bank
 // randomize question bank so its swithcing between different categories
-// add timer
-// make GUI nicer
+// add timer -
+// make GUI nicer - questions need to fit , need game bigger 
 // if i can - make multiplayer into more than two,
 
 //Rules - Once a question has been used, it doesnt come back - change next turn()
