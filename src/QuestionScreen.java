@@ -20,8 +20,8 @@ public class QuestionScreen {
 
         for (int i = 0; i < questionChoices.length; i ++){
             JButton answerButton = new JButton(questionChoices[i]);
-            answerButton.setBounds(190,y,450,60);
-            answerButton.setFont(new Font("SansSerif", Font.BOLD, 16));
+            answerButton.setBounds(350,y,700,70);
+            answerButton.setFont(new Font("SansSerif", Font.BOLD, 21));
             int answerNumber = i +1; //starts at 0
             answerButton.addActionListener(e -> { questionTimer.stop(); game.isItCorrect(answerNumber);
                 if (game.isGameFinishedForreal()) {
@@ -36,19 +36,22 @@ public class QuestionScreen {
         }
 
         JLabel questionLabel = new JLabel(currentQuestion.getQuestions(),SwingConstants.CENTER);
-        questionLabel.setBounds(140,70,550,50);
-        questionLabel.setFont( new Font ("SansSerif", Font.BOLD, 18));
+        questionLabel.setBounds(250,70,1000,50);
+        questionLabel.setFont( new Font ("SansSerif", Font.BOLD, 21));
         frame.add(questionLabel);
 
         JLabel whoIsPlayingLabel = new JLabel(currentUser.getUsers() + "'s turn!",SwingConstants.CENTER);
-        whoIsPlayingLabel.setBounds(190,20,450,35);
-        whoIsPlayingLabel.setFont(new Font("SansSerif", Font.BOLD,18));
+        whoIsPlayingLabel.setBounds(525,20,450,35);
+        whoIsPlayingLabel.setFont(new Font("SansSerif", Font.BOLD,20));
         frame.add(whoIsPlayingLabel);
 
         JLabel firstScoreLabel = new JLabel(game.getFirstUser().getUsers() + ": " + game.firstUserScore());
         JLabel secondScoreLabel = new JLabel (game.getSecondUser().getUsers() + ": " + game.secondUserScore());
-        firstScoreLabel.setBounds(30,20,150,30);
-        secondScoreLabel.setBounds(650,20,150,30);
+        firstScoreLabel.setBounds(30,20,350,35);
+        secondScoreLabel.setBounds(1050,20,350,35);
+
+        firstScoreLabel.setHorizontalAlignment(SwingConstants.LEFT);
+        secondScoreLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 
         JLabel timerLabel = new JLabel("", SwingConstants.CENTER);
         timerLabel.setBounds(340,125,150,30);
@@ -69,8 +72,8 @@ public class QuestionScreen {
         });
         questionTimer.start();
 
-        firstScoreLabel.setFont(new Font("SansSerif",Font.BOLD,16));
-        secondScoreLabel.setFont(new Font("SansSerif", Font.BOLD,16));
+        firstScoreLabel.setFont(new Font("SansSerif",Font.BOLD,18));
+        secondScoreLabel.setFont(new Font("SansSerif", Font.BOLD,18));
 
         frame.add(firstScoreLabel);
         frame.add(secondScoreLabel);

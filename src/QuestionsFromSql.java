@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class QuestionsFromSql {
 
@@ -63,6 +64,15 @@ public class QuestionsFromSql {
 
                 System.out.println(questionFromSql.getQuestions());
 
+            }
+            System.out.println("questions loaded : " + questionsFromSql.size());
+
+            Collections.shuffle(questionsFromSql);
+
+            int amountOfQuestions = 10; // short enough for easy testing but will turn into 15
+
+            if(questionsFromSql.size() > amountOfQuestions) {
+                questionsFromSql = new ArrayList<>(questionsFromSql.subList(0,amountOfQuestions));
             }
             System.out.println("questions loaded : " + questionsFromSql.size());
         } catch (SQLException e) {

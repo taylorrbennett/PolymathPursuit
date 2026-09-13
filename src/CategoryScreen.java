@@ -26,9 +26,9 @@ public class CategoryScreen {
 
         JLabel categoryTitle = new JLabel( currentName+ ", you can choose your Category!", SwingConstants.CENTER);
 
-        categoryTitle.setBounds(190,60,450,45);
+        categoryTitle.setBounds(200,70,1100,50);
 
-        categoryTitle.setFont(new Font("SansSerif", Font.BOLD,28));
+        categoryTitle.setFont(new Font("SansSerif", Font.BOLD,30));
 
         frame.add(categoryTitle); // adding the title to the frame
 
@@ -37,16 +37,16 @@ public class CategoryScreen {
 
         // Category Titles loop - makes scalable easier
 
-      int x = 190;
-      int y = 160;
+      int x = 425;
+      int y = 180;
 
       for (int i = 0; i < categories.length; i++) {
 
           Category category = categories[i];
 
           JButton categoryButton = new JButton(category.getCategories());
-          categoryButton.setBounds(x,y,200,70);
-          categoryButton.setFont(new Font("SansSerif", Font.BOLD,17));
+          categoryButton.setBounds(x,y,280,85);
+          categoryButton.setFont(new Font("SansSerif", Font.BOLD,19));
 
           categoryButton.setOpaque(true);
           categoryButton.setBorderPainted(false);
@@ -65,11 +65,11 @@ public class CategoryScreen {
 
           frame.add(categoryButton);
 
-          x += 250;   // button to right
+          x += 350;   // button to right
 
-          if(x > 440) {     // button back left
-            x = 190;
-            y+= 100;        // button down
+          if(x > 775) {     // button back left
+            x = 425;
+            y+= 120;        // button down
           }
       }
         frame.revalidate();

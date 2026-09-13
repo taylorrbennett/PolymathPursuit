@@ -12,40 +12,43 @@ public class StartScreen {
 
      // Title
         JLabel title = new JLabel("Polymath Pursuit", SwingConstants.CENTER);
-        title.setBounds(190,40,450,45);
-        title.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD,32));
+        title.setBounds(400,100,700,60);
+        title.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD,38));
 
     // Subtitle
         JLabel subTitle = new JLabel ("Enter your names to play!", SwingConstants.CENTER);
-        subTitle.setBounds(190, 90, 450,35);
-        subTitle.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 20));
+        subTitle.setBounds(400, 165, 700,40);
+        subTitle.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 22));
 
      // First User
     JTextField firstUserField = new JTextField();
-        firstUserField.setBounds(300,155,250,35);
+        firstUserField.setBounds(575,250,350,45);
         firstUserField.setBorder(BorderFactory.createLineBorder( new Color(255,182,193), 2));
         firstUserField.setMargin(new Insets(5,8,5,8));
+        firstUserField.setFont(new Font("SansSerif", Font.PLAIN,18));
 
     JLabel firstUserLabel = new JLabel("Player 1: ");
-        firstUserLabel.setBounds(220,155,80,30);
+        firstUserLabel.setBounds(450,250,125,45);
+        firstUserLabel.setFont(new Font("SansSerif", Font.BOLD,20));
 
 
 
         // Second User
     JTextField secondUserField = new JTextField();
-        secondUserField.setBounds(300,210, 250, 35);
+        secondUserField.setBounds(575,320, 350, 45);
         secondUserField.setBorder(BorderFactory.createLineBorder(new Color(255,182,193),2));
         secondUserField.setMargin(new Insets(5,8,5,8));
+        secondUserField.setFont(new Font("SansSerif", Font.PLAIN,18));
 
     JLabel secondUserLabel = new JLabel("Player 2: ");
-        secondUserLabel.setBounds(220,210,80,30);
-
+        secondUserLabel.setBounds(450,320,125,45);
+        secondUserLabel.setFont(new Font("SansSerif", Font.BOLD,20));
 
 
 // Play Button
     JButton playButton = new JButton("Play");
-        playButton.setBounds(315,285,200,50);
-        playButton.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD,18));
+        playButton.setBounds(600,410,300,65);
+        playButton.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD,20));
         playButton.setBackground(new Color(255,182,193));    // actual button
         playButton.setForeground(Color.WHITE);   // words
         playButton.setOpaque(true);
@@ -80,6 +83,8 @@ public class StartScreen {
         frame.add(secondUserLabel);
         frame.add(firstUserLabel);
         frame.add(playButton);
+        frame.revalidate();
+        frame.repaint();
 
 
         frame.setVisible(true);

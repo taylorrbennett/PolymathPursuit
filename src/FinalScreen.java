@@ -10,16 +10,16 @@ public class FinalScreen {
         frame.getContentPane().setBackground(new Color(250,240,255));
 
         JLabel title = new JLabel( "Game is finished", SwingConstants.CENTER); // Creating title Box
-        title.setBounds(190,50,450,50);
-        title.setFont(new Font("SansSerif",Font.BOLD,31));
+        title.setBounds(400,100,700,60);
+        title.setFont(new Font("SansSerif",Font.BOLD,36));
 
         JLabel scoreNumberOne = new JLabel(firstUser.getUsers() + ": " + firstUserScore.getScoring(), SwingConstants.CENTER);       // Creating Score One Box
-        scoreNumberOne.setBounds(190,140,450,40);
-        scoreNumberOne.setFont(new Font("SansSerif", Font.BOLD,22));
+        scoreNumberOne.setBounds(450,220,600,45);
+        scoreNumberOne.setFont(new Font("SansSerif", Font.BOLD,24));
 
         JLabel scoreNumberTwo = new JLabel(secondUser.getUsers() + ": " + secondUserScore.getScoring(), SwingConstants.CENTER);   // Creating Score Two Box
-        scoreNumberTwo.setBounds(190,190,450,40);
-        scoreNumberTwo.setFont(new Font("SansSerif", Font.BOLD,22));
+        scoreNumberTwo.setBounds(450,280,600,44);
+        scoreNumberTwo.setFont(new Font("SansSerif", Font.BOLD,24));
 
 
         User[] users = { firstUser, secondUser};
@@ -27,14 +27,14 @@ public class FinalScreen {
 
 
         JLabel winnerBox = new JLabel("", SwingConstants.CENTER);
-        winnerBox.setBounds(190,280,450,50);
-        winnerBox.setFont(new Font("SansSerif", Font.BOLD, 26));
+        winnerBox.setBounds(400,390,700,60);
+        winnerBox.setFont(new Font("SansSerif", Font.BOLD, 30));
 
         if (WhoWon.incaseOfTies(scores)) {
-            winnerBox.setText("Its a tie");
+            winnerBox.setText("It's a tie");
         } else {
             int letsGetTheWinner = WhoWon.letsGetTheWinner(scores);
-            winnerBox.setText(users[letsGetTheWinner].getUsers() + ": is the winner");
+            winnerBox.setText(users[letsGetTheWinner].getUsers() + " is the winner!");
         }
 
 

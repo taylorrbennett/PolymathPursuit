@@ -4,7 +4,7 @@ public class GameGUI {
         public void oopsieGui() {
 
                 JFrame frame = new JFrame("Polymath Pursuit");
-                frame.setSize(800, 700);
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLayout(null);
 
