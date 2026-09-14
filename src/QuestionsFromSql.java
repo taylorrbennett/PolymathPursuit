@@ -9,8 +9,21 @@ import java.util.Collections;
 public class QuestionsFromSql {
 
 
+    private static final String URL = findingDatabase();
+    private static String findingDatabase () {
+        try{
+            java.io.File foundLocation = new java.io.File(QuestionsFromSql.class.getProtectionDomain().getCodeSource().getLocation().toURI());
 
-    private static final String URL = "jdbc:sqlite:polymath_pursuit.db";
+            if (foundLocation.isFile()) {
+                java.io.File questionDatabase = new java.io.File(foundLocation.getParentFile(),"polymath_pursuit.db");
+
+                return "jdbc:sqlite:" + questionDatabase.getAbsolutePath();
+            }
+            } catch (Exception e){
+            e.printStackTrace();
+        }
+        return "jdbc:sqlite:polymath_pursuit.db";
+    };
 
     public static Connection connect()
             throws SQLException {
@@ -18,7 +31,7 @@ public class QuestionsFromSql {
     }
 
     public static QuestionSetup[] getQuestionsFromSql(Category firstUserCategory, Category secondUserCategory){
-        System.out.println(new java.io.File("polymath_pursuit.db").getAbsolutePath());
+        System.out.println("Databse URL:" + URL);
         String sql = "SELECT * FROM PolymathPursuit WHERE category = ? OR category = ?";
         ArrayList <QuestionSetup> questionsFromSql = new ArrayList<>(); // after creating objects from the table - put them in this little array
 
