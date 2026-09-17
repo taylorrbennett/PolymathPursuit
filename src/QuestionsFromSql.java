@@ -82,7 +82,7 @@ public class QuestionsFromSql {
 
             Collections.shuffle(questionsFromSql);
 
-            int amountOfQuestions = 10; // short enough for easy testing but will turn into 15
+            int amountOfQuestions = 10; //
 
             if(questionsFromSql.size() > amountOfQuestions) {
                 questionsFromSql = new ArrayList<>(questionsFromSql.subList(0,amountOfQuestions));
